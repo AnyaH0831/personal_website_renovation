@@ -1,3 +1,15 @@
+# README
+
+## Personal Website
+    - Showcase my past experience and side projects
+    - Contact information (LinkedIn, Email, GitHub, etc.)
+    - Related links etc. 
+
+### Tech Stack: 
+    - React (Vite)
+    - HTML/CSS --> (TailwindCSS)
+    - JavaScript
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
