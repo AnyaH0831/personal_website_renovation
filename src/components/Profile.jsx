@@ -10,8 +10,11 @@ function Profile({data}) {
 
             }}></div>
 
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
+
             <div className="max-w-4xl w-full text-center">
                 <div className="mb-8 relative">
+                    
                     <h1 className="text-5xl md:text-7xl font-bold font-mono mb-4 text-white">
                         {data.name}
                     </h1>
@@ -28,19 +31,19 @@ function Profile({data}) {
                     <a href={data.links.github}
                         target = "_blank"
                         rel = "noopener noreferrer"
-                        className = "px-6 py-3 bg-richh-cerulean text-white rounded-lg hover:bg-cerulean transition-colors font-mono"
+                        className = "px-6 py-3 bg-rich-cerulean text-white rounded-lg hover:bg-cerulean transition-colors font-mono"
                     >GitHub</a>
 
 
                     <a href={data.links.linkedin}
                         target = "_blank"
                         rel = "noopener noreferrer"
-                        className = "px-6 py-3 bg-richh-cerulean text-white rounded-lg hover:bg-cerulean transition-colors font-mono"
+                        className = "px-6 py-3 bg-rich-cerulean text-white rounded-lg hover:bg-cerulean transition-colors font-mono"
                     >LinkedIn</a>
 
                 </div>
 
-
+     
 
             </div>
             
