@@ -76,7 +76,7 @@ function Timeline({items}){
                                 </div>        
                                 
                                 <div 
-                                    onclick={function(e) {
+                                    onClick={function(e) {
                                         handleItemClick(item.id, e)
                                     }}
                                     className='w-80 md:w-96 cursor-pointer ml-16 md:ml-2'
