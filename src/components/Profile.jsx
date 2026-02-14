@@ -21,9 +21,26 @@ function Profile({data}) {
             <div className="max-w-4xl w-full text-center">
                 <div className="mb-8 relative">
                     
+                    <div className="absolute inset-0 w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-r from-cherry-rose via-royal-plum to-pacific-cyan opacity-50 blur-xl animate-pulse"></div>
+                    <div
+                        className="w-48 h-48 mx-auto mb-6 rounded-full p-1 relative z-10 animate-spin-slow"
+                        style={{
+                            background: `conic-gradient(from 0deg, ${colors['cherry-rose']}, ${colors['royal-plum']}, ${colors['rich-cerulean']}, ${colors['pacific-cyan']}, ${colors['cherry-rose']})`
+                        }}
+                    >
+                        <div className="w-full h-full rounded-full overflow-hidden bg-black animate-spin-reverse">
+                            <img
+                                src="/profile_image.jpg"
+                                alt={data.name}
+                                className='w-full h-full object-cover'
+                            />
+                        </div>
+                    </div>
+
                     <h1 className="text-5xl md:text-7xl font-bold font-mono mb-4 text-white">
                         {data.name}
                     </h1>
+                    
                     <p className="text-xl md:text-2xl text-pacific-cyan mb-6 font-mono">
                         {data.tagline}
                     </p>
@@ -59,7 +76,12 @@ function Profile({data}) {
                     </a>
                 </div>
 
-     
+                {/* Arrow */}
+                <div className="mt-16 animate-bounce">
+                    <svg className='w-8 h-8 mx-auto text-pacific-cyan' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 14l-7 7m0 0l-7-7m7 7V3'/>
+                    </svg>
+                </div>
 
             </div>
             
