@@ -1,5 +1,7 @@
 # README
 
+Vercel Deployment: https://personal-website-renovation.vercel.app/ 
+
 ## Personal Website
     - Showcase my past experience and side projects
     - Contact information (LinkedIn, Email, GitHub, etc.)
@@ -9,6 +11,10 @@
     - React (Vite)
     - HTML/CSS --> (TailwindCSS)
     - JavaScript
+    - Backend API for sending emails --> nodemailer
+
+### Deployment:
+    - Vercel
 
 # React + Vite 
 
