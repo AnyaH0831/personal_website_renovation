@@ -19,13 +19,12 @@ export const timelineItems = [
         company: "Royal Bank of Canada (RBC)",
         date: "July 2024 - August 2024",
         shortDescription: "QA Automation",
-        fullDescription: "[comming soon...]",
+        // fullDescription: "[comming soon...]",
         technologies: ["Java", "Selenium"],
         image: "rbc_1.png", //need a good image for this
         achievements: [
-            "Internal tooling",
-            "...",
-            "..."
+            "On the Digital Investment (DI) Online team to automate UI and API test cases using Java and Selenium",
+            "Increased QA efficiency per release, saving 34 hours of regression testing time"
         ]
     },
 
@@ -35,31 +34,47 @@ export const timelineItems = [
         title: "Software Developer Intern",
         company: "Royal Bank of Canada (RBC)",
         date: "July 2025 - August 2025",
-        shortDescription: "Web Development",
-        fullDescription: "[comming soon...]",
+        shortDescription: "Web Development and internal tooling",
+        // fullDescription: "[comming soon...]",
         technologies: ["JavaScript", "HTML/CSS", "Java", "MongoDB"],
         image: "rbc_2.jpg", //need a good image for this
         achievements: [
-            "Internal tooling",
-            "...",
-            "..."
+            "Designed and built a web application with HTML/CSS, JavaScript, Java, and Spring Boot to automate MongoDB backend message template",
+            "Built API endpoints to create, edit, retrieve, and preview templates (JSON & HTML) across multiple message types (Message Centre, SMS/Push, OTP, Voice)",
+            "Enabled non-technical teams to manage templates without direct database access, reducing template update time by 90%+ and removing developer dependency. Improved message template creation efficiency by 900%+ "
+        ]
+    },
+
+
+    {
+        id: 3,
+        type: "extracurricular",
+        title: "Software Engineer",
+        company: "WATOnomous",
+        date: "September 2025 - Present",
+        shortDescription: "Computer vision on the humanoid team",
+        // fullDescription: "[comming soon...]",
+        technologies: ["Python"],
+        image: "goose.jpeg", //need a good image for this
+        achievements: [
+            ""
         ]
     },
 
     {
-        id: 3,
+        id: 4,
         type: "work",
         title: "Full Stack Developer Co-op",
         company: "Royal Bank of Canada (RBC)",
         date: "January 2026 - April 2026",
-        shortDescription: "Data",
-        fullDescription: "[comming soon...]",
+        shortDescription: "Third Party Risk Analysis Automation",
+        // fullDescription: "[comming soon...]",
         technologies: ["Python", "MongoDB", "Dataiku", "ChromaDB"],
         image: "rbc_3.jpeg", //need a good image for this
         achievements: [
-            "Internal tooling",
-            "...",
-            "..."
+            "Built Python recipes in Dataiku to process and manage large scale datasets",
+            "Deployed and integrated a Vector Database (ChromaDB) using Python",
+            "Used Ollama models to generate summaries for SaaS Q&A checklists excel sheets"
         ]
     }
 ];
