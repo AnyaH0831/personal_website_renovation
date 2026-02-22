@@ -17,16 +17,16 @@ function Timeline({items}){
             setClickOrigin({x:`${centerX}px`, y:`${centerY}px`});
         }
 
-        setExpandedId(id);
+        setExpandedId(id);   
     };
-
+ 
     const closeModal = function() {
         setExpandedId(null);
     };
-
-    // const expandedItem = items.find(function(item) {
-    //     setExpandedId(null);
-    // });
+  
+    const expandedItem = items.find(function(item) {
+        return item.id === expandedId;
+    });
 
     return (
         <section className='bg-black py-20 px-4 relative overflow-hidden'>
@@ -124,6 +124,118 @@ function Timeline({items}){
                 </div>
 
             </div>
+
+            {expandedItem && (
+                <div
+                    className='fixed inset-0 z-50 overflow-y-auto'
+                    onClick={closeModal}
+                >
+                    {/* bg photo when clicked */}
+                    {expandedItem.image && (
+                        <div
+                            className="fixed inset-0 animate-bg-fade-in overflow-hidden"
+                            style={{transformOrigin: `${clickOrigin.x} ${clickOrigin.y}`}}
+                        >
+                            <img
+                                src={expandedItem.image}
+                                alt={expandedItem.title}
+                                className="w-full h-full object-cover"
+                                style={{objectPosition: 'center 35%'}}
+                            />
+                            <div className="absolute inset-0 bg-black/40 opacity-0 animate-overlay-fade-in"></div>
+                
+                        </div>
+                    )}
+
+                    <button
+                        onClick={closeModal}
+                        className="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-gray-900/80 backdrop-blur-sm border-2 border-cherry-rose text-cherry-rose hover:bg-cherry-rose hover:text-white transition-colors flex items-center justify-center text-2xl shadow-lg animate-fade-in"
+                    >
+                       ✕ 
+                    </button>
+
+                    {/* info content, details */}
+
+                    <div
+                        className="relative z-10 flex items-center justify-center min-h-screen p-4 py-20"
+                        onClick={function(e) {
+                            e.stopPropagation()
+                        }}
+                    >
+                        <div className='bg-black/75 backdrop-blur-md rounded-3xl border-2 border-cherry-rose p-8 max-w-4xl w-full shadow-[0_0_50px_rgba(183,9,76,0.5)] animate-fade-in-delayed'>
+                            <div className='text-center mb-8'>
+                                <span className='inline-block px-4 py-2 text-sm font-semibold rounded-full mb-4 bg-cherry-rose text-white'>
+                                    Work Experience
+                                </span>
+                                <h2 className='text-4xl font-bold text-pacific-cyan mb-3 font-mono'>
+                                    {expandedItem.title}
+                                </h2>
+
+                                <p className="text-2xl text-cherry-rose font-semibold mb-2">
+                                    {expandedItem.company}
+                                </p>
+
+                                <p className='text-lg text-cerulean mb-6'>
+                                    {expandedItem.date}
+                                </p>
+
+                                <p className="text-xl text-white mb-6">
+                                    {expandedItem.shortDescription}
+                                </p>
+
+                                {expandedItem.fullDescription && (
+                                    <p className="text-gray-200 leading-relaxed mb-8">
+                                        {expandedItem.fullDescription}
+                                    </p>
+                                )}
+
+                            </div>
+
+                            <div className='mb-8'>
+                                <h3 className='text-pacific-cyan font-bold text-xl mb-4 text-center'>
+                                    Technologies
+                                </h3>
+                                <div className="flex flex-wrap gap-3 justify-center">
+                                    {expandedItem.technologies.map(function(tech, techIndex){
+                                        return(
+                                            <span
+                                                key={techIndex}
+                                                className="px-4 py-2 bg-rich-cerulean/80 backdrop-blur-sm text-white rounded-full"
+                                            >
+                                                {tech}
+                                            </span>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {expandedItem.achievements && expandedItem.achievements.length > 0 && (
+                                <div className="mb-8">
+                                    <h3 className="text-pacific-cyan font-bold text-xl mb-4 text-center">
+                                        Key Achievements
+                                    </h3>
+                                    <ul className='space-y-3'>
+                                        {expandedItem.achievements.map(function(achievements, achIndex) {
+                                            return(
+                                                <li key={achIndex} className='text-gray-200 flex items-start'>
+                                                    <span className='text-cherry-rose mr-3 text-xl'>
+                                                        ▹
+                                                    </span>
+                                                    <span className='text-lg'>
+                                                        {achievements}
+                                                    </span>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                </div>
+                            )}
+
+                        </div>
+                    </div>    
+                </div>
+            )}
+                    
         </section>
     )
 
