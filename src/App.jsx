@@ -1,8 +1,9 @@
 import './App.css'
-import { profileData, timelineItems } from './data/portfolioData';
+import { profileData, timelineItems, sideProjects } from './data/portfolioData';
 import Profile from './components/Profile';
 import Timeline from './components/Timeline';
 import Contact from './components/Contact';
+import ProjectCard from './components/ProjectCard'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         </div>
       </nav>
 
+
       {/* Profile Section */}
       <div id="profile">
         <Profile data={profileData}/>
@@ -49,9 +51,28 @@ function App() {
         <Timeline items={timelineItems}/>
       </div>
 
+
+      <section id="projects" className="bg-black py-20 px-4">
+        <div className='max-w-6xl mx-auto'>
+          <h2 className='text-4xl md:text-5xl font-bold text-center mb-16 font-mono'>
+            <span className='bg-clip-text text-pacific-cyan'>
+              Projects
+            </span>
+          </h2>
+        </div>
+           
+        {sideProjects.map(function(project) {
+          return <ProjectCard key={project.id} project={project}/>
+        })}
+        
+      </section>
+
+
       <div id="contact">
         <Contact/>
       </div>
+ 
+      
 
     </div>
   )

@@ -44,7 +44,7 @@ export const timelineItems = [
             "Enabled non-technical teams to manage templates without direct database access, reducing template update time by 90%+ and removing developer dependency. Improved message template creation efficiency by 900%+ "
         ]
     },
-
+ 
 
     {
         id: 3,
@@ -52,12 +52,12 @@ export const timelineItems = [
         title: "Software Engineer",
         company: "WATOnomous",
         date: "September 2025 - Present",
-        shortDescription: "Computer vision on the humanoid team",
+        shortDescription: "Vision Prototyping For The Humanoid Project",
         // fullDescription: "[comming soon...]",
-        technologies: ["Python"],
+        technologies: ["Python", "ROS2"],
         image: "goose.jpeg", //need a good image for this
         achievements: [
-            ""
+            "Added ROS2 Communication module"
         ]
     },
 
@@ -78,3 +78,21 @@ export const timelineItems = [
         ]
     }
 ];
+
+export const sideProjects = [
+    {
+        id: 1,
+        type: "tech",
+        title: "Comic Live Translator",
+        status: "underdevelopment",
+        date: "Current",
+        shortDescription: "A chrome extension to live translate your comics.",
+        // fullDescription: "[comming soon...]",
+        technologies: ["Python", "PaddleOCR", "JavaScript", "HTML/CSS"],
+        image: "rbc_1.png", //need a good image for this
+        achievements: [
+            "On the Digital Investment (DI) Online team to automate UI and API test cases using Java and Selenium",
+            "Increased QA efficiency per release, saving 34 hours of regression testing time"
+        ]
+    }
+]
