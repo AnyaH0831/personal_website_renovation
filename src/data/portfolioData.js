@@ -86,13 +86,56 @@ export const sideProjects = [
         title: "Comic Live Translator",
         status: "underdevelopment",
         date: "Current",
+        github: "https://github.com/AnyaH0831/comic_translator",
         shortDescription: "A chrome extension to live translate your comics.",
         // fullDescription: "[comming soon...]",
         technologies: ["Python", "PaddleOCR", "JavaScript", "HTML/CSS"],
-        image: "rbc_1.png", //need a good image for this
-        achievements: [
-            "On the Digital Investment (DI) Online team to automate UI and API test cases using Java and Selenium",
-            "Increased QA efficiency per release, saving 34 hours of regression testing time"
-        ]
-    }
+        // image: "rbc_1.png", //need a good image for this
+    
+    },
+
+    {
+        id: 2,
+        type: "tech",
+        title: "Algorithm Visualizer",
+        status: "underdevelopment",
+        date: "Current",
+        github: "https://github.com/AnyaH0831/algovisual-pro",
+        shortDescription: "A visualization of common leetcode algorithms.",
+        // fullDescription: "[comming soon...]",
+        technologies: ["HTML5 Canvas", "React", "JavaScript", "HTML/CSS"],
+        // image: "rbc_1.png", //need a good image for this
+
+    },
+
+    {
+        id: 3,
+        type: "tech",
+        title: "Caramel Huang",
+        status: "Complete",
+        date: "September 2025",
+        github: "https://github.com/AnyaH0831/caramel_huang",
+        demo: "https://caramel.anyahuang.page/",
+        shortDescription: "Caramel's personal website.",
+        // fullDescription: "[comming soon...]",
+        technologies: ["Microsoft Azure", "JavaScript", "HTML/CSS"],
+        image: "caramel.png", 
+       
+    },
+
+    // {
+    //     id: 4,
+    //     type: "tech",
+    //     title: "Caramel Huang",
+    //     status: "Complete",
+    //     date: "September 2025",
+    //     shortDescription: "Caramel's personal website.",
+    //     // fullDescription: "[comming soon...]",
+    //     technologies: ["Microsoft Azure", "JavaScript", "HTML/CSS"],
+    //     image: "rbc_1.png", //need a good image for this
+    //     achievements: [
+    //         "On the Digital Investment (DI) Online team to automate UI and API test cases using Java and Selenium",
+    //         "Increased QA efficiency per release, saving 34 hours of regression testing time"
+    //     ]
+    // }
 ]
