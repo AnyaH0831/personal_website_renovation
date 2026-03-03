@@ -17,7 +17,7 @@ function ProjectCard({project}){
         imageNode = <div className='text-gray-500'>Comming Soon... </div>;
     }
 
-  
+
     let githubLink = null;
     if (project.github) {
         githubLink = (

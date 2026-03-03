@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
@@ -153,3 +157,4 @@ body {
 .animate-conic-spin {
   animation: conic-spin 3s linear infinite;
 } 
+   

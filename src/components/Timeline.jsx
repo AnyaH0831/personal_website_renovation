@@ -1,5 +1,5 @@
 import {useState} from 'react'
-// import {colors} from '../theme/colors.js';
+import {colors} from '../theme/colors.js';
 
 function Timeline({items}){
     const [expandedId, setExpandedId] = useState(null);
@@ -30,7 +30,27 @@ function Timeline({items}){
 
     return (
         <section className='bg-black py-20 px-4 relative overflow-hidden'>
-            {/* <div className='absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent pointer-events-none z-10'></div> */}
+            <div className='absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent pointer-events-none z-10'></div>
+
+            <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+                background: `
+                    repeating-linear-gradient(0deg, transparent, transparent 2px, ${colors['pacific-cyan']} 2px, ${colors['pacific-cyan']} 4px),
+                    linear-gradient(to right, ${colors['pacific-cyan']} 1px, transparent 1px),
+                    linear-gradient(to bottom, ${colors['pacific-cyan']} 1px, transparent 1px)
+                `,
+                backgroundSize: '100% 100%, 50px 50px, 50px 50px',
+                maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            }}></div>
+
+            <div className="absolute inset-0 opacity-5" style={{
+                backgroundImage: `
+                linear-gradient(to right, #0091ad 1px, transparent 1px),
+                linear-gradient(to bottom, #0091ad 1px, transparent 1px)
+                `,
+                backgroundSize: '50px 50px',
+                maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            }}></div>
+            
 
             <div className='max-w-6xl mx-auto'>
                 <h2 className='text-4xl md:text-5xl font-bold text-center mb-16 font-mono'>
@@ -38,7 +58,7 @@ function Timeline({items}){
                         Experience
                     </span>
                 </h2>
-
+     
                 <div className="relative">
                     <div className='absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-pacific-cyan md:transform md:-translate-x-1/2'></div>
                     {items.map(function(item, index) {

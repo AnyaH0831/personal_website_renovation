@@ -74,8 +74,13 @@ function App() {
       <div id="contact">
         <Contact/>
       </div>
- 
-      
+  
+      <footer className="bg-black py-2 text-center border-t border-gray-800">
+            <p className='text-pacific-cyan'>
+               © 2026 Anya Huang.
+            </p>
+      </footer>
+
 
     </div>
   )
