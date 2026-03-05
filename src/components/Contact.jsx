@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -7,9 +7,16 @@ function Contact() {
         subject: '',
         message: ''
     });
-
-    const [status, setStatus] = useState('');
+   
+    const [status, setStatus] = useState(null); 
     const [loading, setLoading] = useState(false);
+
+    const showStatus = function(type, message) {
+        setStatus({ type, message });
+        setTimeout(function() {
+            setStatus(null);
+        }, 5000);
+    };
 
     const handleChange = (e) => {
         setFormData({
@@ -21,12 +28,12 @@ function Contact() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         setLoading(true);
-        setStatus('');
+        setStatus('');   
 
         const api_url = import.meta.env.VITE_API_URL;
         console.log('Environment variable VITE_API_URL:', import.meta.env.VITE_API_URL);
         console.log('Using API URL:', api_url);
-
+ 
         try{
             const response = await fetch(`${api_url}/api/send_email`, {
                 method: 'POST',
@@ -39,18 +46,18 @@ function Contact() {
             const data = await response.json();
 
             if (response.ok) {
-                setStatus('Email sent successfully!');
+                showStatus('success', 'Message sent! I\'ll get back to you soon.');
                 setFormData({
                     name: '',
                     from:'',
                     subject: '',
                     message: ''});
-            }else{
-                setStatus('Failed to send email. Please try again.');
+            } else {
+                showStatus('error', 'Failed to send. Please try again.');
             }
         } catch(error) {
             console.error('Error: ', error);
-            setStatus('Error sending email. Please try again.');
+            showStatus('error', 'Something went wrong. Please try again.');
         }finally{
             setLoading(false);
         }
@@ -146,7 +153,37 @@ function Contact() {
                 >
                     {buttonText}
                 </button>
-                {status && <p>{status}</p>}
+                {(() => {
+                    if (!status) {
+                        return null;
+                    }
+
+                    let bannerClass = 'mt-6 w-2/3 mx-auto px-5 py-4 rounded-xl border-2 font-mono text-sm flex items-center gap-3 ';
+                    let icon;
+
+                    if (status.type === 'success') {
+                        bannerClass += 'bg-pacific-cyan/10 border-pacific-cyan text-pacific-cyan';
+                        icon = (
+                            <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                        );
+                    } else {
+                        bannerClass += 'bg-cherry-rose/10 border-cherry-rose text-cherry-rose';
+                        icon = (
+                            <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        );
+                    }
+
+                    return (
+                        <div className={bannerClass}>
+                            {icon}
+                            <span>{status.message}</span>
+                        </div>
+                    );
+                })()}
 
             </div>
         </form>

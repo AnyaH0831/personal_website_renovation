@@ -16,8 +16,8 @@ function Timeline({items}){
 
             setClickOrigin({x:`${centerX}px`, y:`${centerY}px`});
         }
-
-        setExpandedId(id);   
+                 
+        setExpandedId(id);
     };
  
     const closeModal = function() {
@@ -105,7 +105,7 @@ function Timeline({items}){
                                     onClick={function(e) {
                                         handleItemClick(item.id, e)
                                     }}
-                                    className='w-80 md:w-96 cursor-pointer ml-16 md:ml-2'
+                                    className='w-auto max-w-[calc(100vw-5rem)] md:w-96 cursor-pointer ml-16 md:ml-2'
                                 >
                                     <div className="bg-gray-900 rounded-full p-3 border-2 border-rich-cerulean hover:border-cherry-rose hover:scale-105 transition-all duration-300 shadow-lg shadow-rich-cerulean/50 hover:shadow-cherry-rose/50 hover:shadow-xl flex items-center gap-4 relative">
                                         <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-cherry-rose opacity-0 group-hover:opacity-100 transition-opacity"></div>
