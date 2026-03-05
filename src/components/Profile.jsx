@@ -1,8 +1,57 @@
 import {colors} from '../theme/colors.js';
+import {useState} from 'react'
+
+const circleColors = [
+    {bg: 'bg-cherry-rose/30', blur: colors['cherry-rose']},
+    {bg: 'bg-pacific-cyan/30', blur: colors['pacific-cyan']},
+    {bg: 'bg-royal-plum/30', blur: colors['royal-plum']},
+    {bg: 'bg-velvet-purple/30', blur: colors['velvet-purple']},
+    {bg: 'bg-rich-cerulean/30', blur: colors['rich-cerulean']},
+]
 
 function Profile({data}) {
+
+    const [ripples, setRipples] = useState([]);
+    const handleSectionClick = function(e) {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = ((e.clientX - rect.left)/rect.width) * 100;
+        const y = ((e.clientY - rect.top)/rect.height) * 100;
+        const color = circleColors[Math.floor(Math.random() * circleColors.length)];
+        const id = Date.now();
+
+        setRipples(function(prev){
+            return [...prev, {id, x, y, color}];
+        });
+
+        setTimeout(function(){
+            setRipples(function(prev) {
+                return prev.filter(function(r) {return r.id !== id;});
+            });
+        }, 2000);
+    }
+
     return (
-        <section className="min-h-screen bg-black flex items-center justify-center px-4 py-20 relative overflow-hidden">
+        <section className="min-h-screen bg-black flex items-center justify-center px-4 py-20 relative overflow-hidden cursor-crosshair"
+            onClick = {handleSectionClick}
+        >
+
+            {ripples.map(function(ripple){
+                return (
+                    <div
+                        key={ripple.id}
+                        className={`absolute rounded-full blur-3xl pointer-events-none ${ripple.color.bg} animate-click-ripple`}
+                        style={{
+                            left: `${ripple.x}%`,
+                            top: `${ripple.y}%`,
+                            width: '300px',
+                            height: '300px',
+                            transform: 'translate(-50%, -50%)'
+                        }}
+                    >
+
+                    </div>
+                );
+            })}
        
             <div className = "absolute top-20 left-10 w-96 h-96 bg-cherry-rose/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
             <div className = "absolute bottom-20 right-10 w-80 h-80 bg-pacific-cyan/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
