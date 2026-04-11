@@ -5,7 +5,7 @@ export const profileData = {
     links: {
         github: "https://github.com/AnyaH0831",
         linkedin: "https://linkedin.com/in/anyahuang07",
-        email: "anyahuang0831@gmail.com"
+        email: "mailto:anyahuang0831@gmail.com"
     }
 };
 
@@ -72,9 +72,10 @@ export const timelineItems = [
         technologies: ["Python", "MongoDB", "Dataiku", "ChromaDB"],
         image: "rbc_3.jpeg", //need a good image for this
         achievements: [
-            "Built Python recipes in Dataiku to process and manage large scale datasets",
-            "Deployed and integrated a Vector Database (ChromaDB) using Python",
-            "Used Ollama models to generate summaries for SaaS Q&A checklists excel sheets"
+            "Built a React web application to automate SaaS security questionnaire analysis, integrating an enterprise LLM gateway with keyword-matching to classify 100+ compliance questions into binary YES/NO/UNKNOWN outputs to power a downstream risk agent",
+            "Architected a LangChain ReAct agent for autonomous vendor risk analysis; classification outputs and correlation matrices generated from questionnaire data are ingested as agent inputs to surface risk insights across SaaS vendor portfolios",
+            "Developed an analytics dashboard using React (Vite) and Tailwind CSS to visualize agent outputs, SaaS vendor risk profiles, and compliance data in a unified interface",
+            "Designed ETL pipelines in Python (Dataiku) to consolidate and transform vendor datasets across MongoDB collections, enriching risk profiles for downstream LLM classification workflows"
         ]
     }
 ];
@@ -87,11 +88,12 @@ export const sideProjects = [
         status: "underdevelopment",
         date: "Current",
         github: "https://github.com/AnyaH0831/comic_translator",
+        demo: "https://chromewebstore.google.com/detail/hbmnlhjiadooeibgnmpffahgpopbdhip?utm_source=item-share-cb",
         shortDescription: "A chrome extension to live translate your comics.",
         // fullDescription: "[comming soon...]",
         technologies: ["Python", "PaddleOCR", "JavaScript", "HTML/CSS"],
-        // image: "rbc_1.png", //need a good image for this
-    
+        image: "comic.png", 
+
     },
 
     {
