@@ -15,7 +15,7 @@ export const timelineItems = [
     {
         id: 1,
         type: "work",
-        title: "Software Developer Intern",
+        title: "Software Developer Intern",  
         company: "Royal Bank of Canada (RBC)",
         date: "July 2024 - August 2024",
         shortDescription: "QA Automation",
@@ -53,7 +53,6 @@ export const timelineItems = [
         company: "WATOnomous",
         date: "September 2025 - Present",
         shortDescription: "Vision Prototyping For The Humanoid Project",
-        // fullDescription: "[comming soon...]",
         technologies: ["Python", "ROS2"],
         image: "goose.jpeg", //need a good image for this
         achievements: [
@@ -68,7 +67,6 @@ export const timelineItems = [
         company: "Royal Bank of Canada (RBC)",
         date: "January 2026 - April 2026",
         shortDescription: "Third Party Risk Analysis Automation",
-        // fullDescription: "[comming soon...]",
         technologies: ["Python", "MongoDB", "Dataiku", "ChromaDB"],
         image: "rbc_3.jpeg", //need a good image for this
         achievements: [
@@ -76,6 +74,38 @@ export const timelineItems = [
             "Architected a LangChain ReAct agent for autonomous vendor risk analysis; classification outputs and correlation matrices generated from questionnaire data are ingested as agent inputs to surface risk insights across SaaS vendor portfolios",
             "Developed an analytics dashboard using React (Vite) and Tailwind CSS to visualize agent outputs, SaaS vendor risk profiles, and compliance data in a unified interface",
             "Designed ETL pipelines in Python (Dataiku) to consolidate and transform vendor datasets across MongoDB collections, enriching risk profiles for downstream LLM classification workflows"
+        ]
+    },
+
+    {
+        id: 5,
+        type: "extracurricular",
+        title: "Machine Learning Engineer",
+        company: "RBC Borealis Let's SOLVE it; United Way",
+        date: "March 2026 - May 2026",
+        shortDescription: "Rural Youth Homelessness Prediction",
+        // fullDescription: "[comming soon...]",
+        technologies: ["Python", "XGBoost", "FastAPI", "Optimization", "Data Extrapolation", "React"],
+        image: "RBC_Borealis_Logo.webp", //need a good image for this
+        achievements: [
+           "Trained an XGBoost Model to identify whether if they are experiencing chronic homelessness",
+           "Built a dashboard in React where the individual can fill in the form and receive a percentage output on likeliness of chronic homelessness and ask an LLM to give recommendations on services and next step for the individual",
+           "Built a RAG chatbot to provide recommendation and suggestions for next step"
+        ]
+    },
+
+    {
+        id: 6,
+        type: "work",
+        title: "Machine Learning Engineer Intern",
+        company: "Investie",
+        date: "May 2026 - Present",
+        shortDescription: "The next Duolingo for Investment",
+        // fullDescription: "[comming soon...]",
+        technologies: ["Python", "JavaScript"],
+        image: "Investie_Logo.jpg", //need a good image for this
+        achievements: [
+          ""
         ]
     }
 ];
@@ -85,7 +115,7 @@ export const sideProjects = [
         id: 1,
         type: "tech",
         title: "Comic Live Translator",
-        status: "underdevelopment",
+        status: "Complete",
         date: "Current",
         github: "https://github.com/AnyaH0831/comic_translator",
         demo: "https://chromewebstore.google.com/detail/hbmnlhjiadooeibgnmpffahgpopbdhip?utm_source=item-share-cb",
@@ -93,33 +123,44 @@ export const sideProjects = [
         // fullDescription: "[comming soon...]",
         technologies: ["Python", "PaddleOCR", "JavaScript", "HTML/CSS"],
         image: "comic.png", 
-
+ 
     },
 
     {
         id: 2,
         type: "tech",
+        title: "Rural Youth Homeless Predictor",
+        status: "Complete",
+        date: "Current",
+        github: "https://github.com/AnyaH0831/homeless-predictor-ui",
+        shortDescription: "Identify whether if the individual is experiencing chronic homelessness",
+        technologies: ["XGBoost", "React", "Python", "React", "Javascript"],
+        image: "lsi.png", 
+
+    },
+    {
+        id: 3,
+        type: "tech",
         title: "Algorithm Visualizer",
         status: "underdevelopment",
         date: "Current",
         github: "https://github.com/AnyaH0831/algovisual-pro",
+        demo: "https://algovisual-pro.vercel.app/",
         shortDescription: "A visualization of common leetcode algorithms.",
         // fullDescription: "[comming soon...]",
         technologies: ["HTML5 Canvas", "React", "JavaScript", "HTML/CSS"],
-        // image: "rbc_1.png", //need a good image for this
+        image: "algo.png", 
 
     },
-
     {
-        id: 3,
+        id: 4,
         type: "tech",
         title: "Caramel Huang",
         status: "Complete",
         date: "September 2025",
         github: "https://github.com/AnyaH0831/caramel_huang",
-        demo: "https://caramel.anyahuang.page/",
+        demo: "https://caramel.anyahuang.ca/",
         shortDescription: "Caramel's personal website.",
-        // fullDescription: "[comming soon...]",
         technologies: ["Microsoft Azure", "JavaScript", "HTML/CSS"],
         image: "caramel.png", 
        
